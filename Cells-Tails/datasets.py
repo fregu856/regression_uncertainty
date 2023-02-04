@@ -33,19 +33,39 @@ import cv2
 # print (img.dtype)
 #
 # num_examples = len(img_filenames)
-# print ("num examples: %d" % num_examples)
+# print (num_examples)
 #
-# np.random.shuffle(img_filenames)
-# np.random.shuffle(img_filenames)
-# np.random.shuffle(img_filenames)
-# np.random.shuffle(img_filenames)
+# img_filenames_in = []
+# img_filenames_out = []
+# for img_filename in img_filenames:
+#     label = float(img_filename.split("_")[1].split(".0.")[0])
+#
+#     if (label > 50) and (label < 151):
+#         img_filenames_in.append(img_filename)
+#     else:
+#         img_filenames_out.append(img_filename)
+#
+# print ("num examples in: %d" % len(img_filenames_in))
+# print ("num examples out: %d" % len(img_filenames_out))
+#
+# np.random.shuffle(img_filenames_in)
+# np.random.shuffle(img_filenames_in)
+# np.random.shuffle(img_filenames_in)
+# np.random.shuffle(img_filenames_in)
+# #
+# np.random.shuffle(img_filenames_out)
+# np.random.shuffle(img_filenames_out)
+# np.random.shuffle(img_filenames_out)
+# np.random.shuffle(img_filenames_out)
 #
 # num_imgs_train = 10000
 # num_imgs_val = 2000
 # num_imgs_test = 10000
-# img_filenames_train = img_filenames[0:num_imgs_train]
-# img_filenames_val = img_filenames[num_imgs_train:(num_imgs_train+num_imgs_val)]
-# img_filenames_test = img_filenames[(num_imgs_train+num_imgs_val):(num_imgs_train+num_imgs_val+num_imgs_test)]
+# img_filenames_train = img_filenames_in[0:num_imgs_train]
+# img_filenames_val = img_filenames_in[num_imgs_train:(num_imgs_train+num_imgs_val)]
+# img_filenames_test_1 = img_filenames_in[(num_imgs_train+num_imgs_val):((num_imgs_train+num_imgs_val)+int(num_imgs_test/2))]
+# img_filenames_test_2 = img_filenames_out[0:int(num_imgs_test/2)]
+# img_filenames_test = np.concatenate((img_filenames_test_1, img_filenames_test_2))
 #
 # print (len(img_filenames_train))
 # print (len(img_filenames_val))
@@ -107,27 +127,27 @@ import cv2
 # print (np.max(labels_test))
 # print (np.mean(labels_test))
 #
-# with open("/root/regression_uncertainty/Cells/labels_train.pkl", "wb") as file:
+# with open("/root/regression_uncertainty/Cells-Tails/labels_train.pkl", "wb") as file:
 #     pickle.dump(labels_train, file)
-# with open("/root/regression_uncertainty/Cells/images_train.pkl", "wb") as file:
+# with open("/root/regression_uncertainty/Cells-Tails/images_train.pkl", "wb") as file:
 #     pickle.dump(images_train, file)
 #
-# with open("/root/regression_uncertainty/Cells/labels_val.pkl", "wb") as file:
+# with open("/root/regression_uncertainty/Cells-Tails/labels_val.pkl", "wb") as file:
 #     pickle.dump(labels_val, file)
-# with open("/root/regression_uncertainty/Cells/images_val.pkl", "wb") as file:
+# with open("/root/regression_uncertainty/Cells-Tails/images_val.pkl", "wb") as file:
 #     pickle.dump(images_val, file)
 #
-# with open("/root/regression_uncertainty/Cells/labels_test.pkl", "wb") as file:
+# with open("/root/regression_uncertainty/Cells-Tails/labels_test.pkl", "wb") as file:
 #     pickle.dump(labels_test, file)
-# with open("/root/regression_uncertainty/Cells/images_test.pkl", "wb") as file:
+# with open("/root/regression_uncertainty/Cells-Tails/images_test.pkl", "wb") as file:
 #     pickle.dump(images_test, file)
 # ################################################################################
 
 class DatasetTrain(torch.utils.data.Dataset):
     def __init__(self):
-        with open("/root/regression_uncertainty/Cells/labels_train.pkl", "rb") as file: # (needed for python3)
+        with open("/root/regression_uncertainty/Cells-Tails/labels_train.pkl", "rb") as file: # (needed for python3)
             self.labels = pickle.load(file)
-        with open("/root/regression_uncertainty/Cells/images_train.pkl", "rb") as file: # (needed for python3)
+        with open("/root/regression_uncertainty/Cells-Tails/images_train.pkl", "rb") as file: # (needed for python3)
             self.imgs = pickle.load(file)
 
         print (self.labels.shape)
@@ -159,9 +179,9 @@ class DatasetTrain(torch.utils.data.Dataset):
 
 class DatasetVal(torch.utils.data.Dataset):
     def __init__(self):
-        with open("/root/regression_uncertainty/Cells/labels_val.pkl", "rb") as file: # (needed for python3)
+        with open("/root/regression_uncertainty/Cells-Tails/labels_val.pkl", "rb") as file: # (needed for python3)
             self.labels = pickle.load(file)
-        with open("/root/regression_uncertainty/Cells/images_val.pkl", "rb") as file: # (needed for python3)
+        with open("/root/regression_uncertainty/Cells-Tails/images_val.pkl", "rb") as file: # (needed for python3)
             self.imgs = pickle.load(file)
 
         print (self.labels.shape)
@@ -193,9 +213,9 @@ class DatasetVal(torch.utils.data.Dataset):
 
 class DatasetTest(torch.utils.data.Dataset):
     def __init__(self):
-        with open("/root/regression_uncertainty/Cells/labels_test.pkl", "rb") as file: # (needed for python3)
+        with open("/root/regression_uncertainty/Cells-Tails/labels_test.pkl", "rb") as file: # (needed for python3)
             self.labels = pickle.load(file)
-        with open("/root/regression_uncertainty/Cells/images_test.pkl", "rb") as file: # (needed for python3)
+        with open("/root/regression_uncertainty/Cells-Tails/images_test.pkl", "rb") as file: # (needed for python3)
             self.imgs = pickle.load(file)
 
         print (self.labels.shape)
