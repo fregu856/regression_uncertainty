@@ -7,7 +7,7 @@ Code will be uploaded soon.
 
 ***
 
-![overview image](ebms_proposals.jpg)
+![overview image](regression_uncertainty.png)
 
 Official implementation (PyTorch) of the paper: \
 **Learning Proposals for Practical Energy-Based Regression**, 2023 [[arXiv (TODO!)]]() [[project (TODO!)]](). \
