@@ -1,3 +1,5 @@
+# camera-ready
+
 import torch
 import torch.utils.data
 import torch.nn.functional as F
