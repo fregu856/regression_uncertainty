@@ -74,7 +74,7 @@ for run_i in range(num_runs):
     networks = []
     for i in range(M):
         model_i = model_inds[i]
-        network = QuantileNet(model_id + "eval_quantile_regression", project_dir="/root/regression_uncertainty/Cells", alpha=alpha).cuda()
+        network = QuantileNet(model_id + "_eval_quantile_regression", project_dir="/root/regression_uncertainty/Cells", alpha=alpha).cuda()
         network.load_state_dict(torch.load("/root/regression_uncertainty/Cells/training_logs/model_%s_%d/checkpoints/model_%s_epoch_%d.pth" % (model_id, model_i, model_id, epoch)))
         networks.append(network)
 
