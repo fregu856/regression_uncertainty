@@ -1,3 +1,5 @@
+# camera-ready
+
 from datasets import DatasetTrain, DatasetVal # (this needs to be imported before torch, because cv2 needs to be imported before torch for some reason)
 from model_gaussian import GaussNet
 
