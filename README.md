@@ -60,7 +60,8 @@ TODO!
 - Run VentricularVolume/create_datasets.py to generate the train, val and test splits.
 
 #### BrainTumourPixels:
-- TODO!
+- Download Task01_BrainTumor.tar from http://medicaldecathlon.com/ and extract.
+- Move the resulting Task01_BrainTumour folder to regression_uncertainty/datasets.
 - Run BrainTumourPixels/create_datasets.py to generate the train, val and test splits.
 
 #### SkinLesionPixels:
