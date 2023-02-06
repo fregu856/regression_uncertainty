@@ -68,10 +68,13 @@ TODO!
 - Run SkinLesionPixels/create_datasets.py to generate the train, val and test splits.
 
 #### HistologyNucleiPixels:
-- TODO!
+- Download consep.zip from https://warwick.ac.uk/fac/cross_fac/tia/data/hovernet/ and extract.
+- Download kumar.zip and tnbc.zip from https://drive.google.com/drive/folders/1l55cv3DuY-f7-JotDN7N5nbNnjbLWchK and extract.
+- Create the folder regression_uncertainty/datasets/HistologyNucleiPixels.
+- Move the resulting CoNSeP, kumar and tnbc folders to regression_uncertainty/datasets/HistologyNucleiPixels.
 - Run HistologyNucleiPixels/create_datasets.py to generate the train, val and test splits.
 
 #### AerialBuildingPixels:
 - Download the data from https://project.inria.fr/aerialimagelabeling/ and extract everything.
-- Move the resulting AerialImageDataset to regression_uncertainty/datasets.
+- Move the resulting AerialImageDataset folder to regression_uncertainty/datasets.
 - Run AerialBuildingPixels/create_datasets.py to generate the train, val and test splits.
