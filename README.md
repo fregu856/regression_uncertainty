@@ -29,25 +29,37 @@ TODO!
 
 #### Cells:
 - TODO!
+- TODO!
+- TODO!
 - Run Cells/create_datasets.py to generate the train, val and test splits.
 
 #### Cells-Tails:
+- TODO!
+- TODO!
 - TODO!
 - Run Cells-Tails/create_datasets.py to generate the train, val and test splits.
 
 #### Cells-Gap:
 - TODO!
+- TODO!
+- TODO!
 - Run Cells-Gap/create_datasets.py to generate the train, val and test splits.
 
 #### ChairAngle:
+- TODO!
+- TODO!
 - TODO!
 - Run ChairAngle/create_datasets.py to generate the train, val and test splits.
 
 #### ChairAngle-Tails:
 - TODO!
+- TODO!
+- TODO!
 - Run ChairAngle-Tails/create_datasets.py to generate the train, val and test splits.
 
 #### ChairAngle-Gap:
+- TODO!
+- TODO!
 - TODO!
 - Run ChairAngle-Gap/create_datasets.py to generate the train, val and test splits.
 
@@ -56,7 +68,8 @@ TODO!
 - Run AssetWealth/create_datasets.py to download the dataset (13 GB).
 
 #### VentricularVolume:
-- TODO!
+- Download EchoNet-Dynamic.zip from https://echonet.github.io/dynamic/index.html#dataset and extract.
+- Move the resulting EchoNet-Dynamic folder to regression_uncertainty/datasets.
 - Run VentricularVolume/create_datasets.py to generate the train, val and test splits.
 
 #### BrainTumourPixels:
