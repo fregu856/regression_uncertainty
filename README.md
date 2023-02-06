@@ -21,3 +21,57 @@ TODO!
 
 
 
+
+***
+***
+
+## Datasets:
+
+#### Cells:
+- TODO!
+- Run Cells/create_datasets.py to generate the train, val and test splits.
+
+#### Cells-Tails:
+- TODO!
+- Run Cells-Tails/create_datasets.py to generate the train, val and test splits.
+
+#### Cells-Gap:
+- TODO!
+- Run Cells-Gap/create_datasets.py to generate the train, val and test splits.
+
+#### ChairAngle:
+- TODO!
+- Run ChairAngle/create_datasets.py to generate the train, val and test splits.
+
+#### ChairAngle-Tails:
+- TODO!
+- Run ChairAngle-Tails/create_datasets.py to generate the train, val and test splits.
+
+#### ChairAngle-Gap:
+- TODO!
+- Run ChairAngle-Gap/create_datasets.py to generate the train, val and test splits.
+
+#### AssetWealth:
+- $ pip install wilds
+- Run AssetWealth/create_datasets.py to download the dataset (13 GB).
+
+#### VentricularVolume:
+- TODO!
+- Run VentricularVolume/create_datasets.py to generate the train, val and test splits.
+
+#### BrainTumourPixels:
+- TODO!
+- Run BrainTumourPixels/create_datasets.py to generate the train, val and test splits.
+
+#### SkinLesionPixels:
+- TODO!
+- Run SkinLesionPixels/create_datasets.py to generate the train, val and test splits.
+
+#### HistologyNucleiPixels:
+- TODO!
+- Run HistologyNucleiPixels/create_datasets.py to generate the train, val and test splits.
+
+#### AerialBuildingPixels:
+- Download the data from https://project.inria.fr/aerialimagelabeling/ and extract everything.
+- Move the resulting AerialImageDataset to regression_uncertainty/datasets.
+- Run AerialBuildingPixels/create_datasets.py to generate the train, val and test splits.
