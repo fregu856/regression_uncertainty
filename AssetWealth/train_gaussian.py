@@ -1,6 +1,5 @@
 # camera-ready
 
-from datasets import DatasetTrain, DatasetVal # (this needs to be imported before torch, because cv2 needs to be imported before torch for some reason)
 from model_gaussian import GaussNet
 
 import torch
@@ -19,6 +18,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import cv2
 
+from wilds import get_dataset
+from wilds.common.data_loaders import get_train_loader, get_eval_loader
+import torchvision.transforms as transforms
+
 model_id = "gaussian"
 
 num_epochs = 75
@@ -27,10 +30,11 @@ learning_rate = 0.001
 
 num_models = 20
 for i in range(num_models):
-    train_dataset = DatasetTrain()
+    dataset = get_dataset(dataset="poverty", download=False)
+    train_dataset = dataset.get_subset("train", transform=transforms.Resize((64, 64)))
     num_train_batches = int(len(train_dataset)/batch_size)
     print ("num_train_batches:", num_train_batches)
-    train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
+    train_loader = get_train_loader("standard", train_dataset, batch_size=batch_size)
 
     network = GaussNet(model_id + "_%d" % i, project_dir="/root/regression_uncertainty/AssetWealth").cuda()
 
@@ -49,9 +53,9 @@ for i in range(num_models):
         ########################################################################
         network.train() # (set in training mode, this affects BatchNorm and dropout)
         batch_losses_train = []
-        for step, (xs, ys) in enumerate(train_loader):
-            xs = xs.cuda() # (shape: (batch_size, 3, img_size, img_size))
-            ys = ys.cuda() # (shape: (batch_size))
+        for step, (xs, ys, _) in enumerate(train_loader):
+            xs = xs.cuda() # (shape: (batch_size, 8, 64, 64))
+            ys = ys.cuda().squeeze(1) # (shape: (batch_size))
 
             x_features = network.feature_net(xs) # (shape: (batch_size, hidden_dim))
             if (epoch >= 20) and (epoch < 25):

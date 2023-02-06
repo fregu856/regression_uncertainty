@@ -37,7 +37,7 @@ class QuantileFeatureNet(nn.Module):
         self.resnet34 = resnet34(spectral_normalization=False)
 
     def forward(self, x):
-        # (x has shape (batch_size, 3, img_size, img_size))
+        # (x has shape (batch_size, 8, img_size, img_size))
 
         x_feature = self.resnet34(x) # (shape: (batch_size, 512))
 

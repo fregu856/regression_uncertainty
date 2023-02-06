@@ -1,6 +1,5 @@
 # camera-ready
 
-from datasets import DatasetTrain, DatasetVal, DatasetTest # (this needs to be imported before torch, because cv2 needs to be imported before torch for some reason)
 from model_quantile import QuantileNet
 
 import torch
@@ -38,19 +37,32 @@ epoch = 75
 
 batch_size = 32
 
-train_dataset = DatasetTrain()
-val_dataset = DatasetVal()
-test_dataset = DatasetTest()
+################################################################################
+from wilds import get_dataset
+from wilds.common.data_loaders import get_train_loader, get_eval_loader
+import torchvision.transforms as transforms
+
+dataset = get_dataset(dataset="poverty", download=False)
+train_dataset = dataset.get_subset("train", transform=transforms.Resize((64, 64)))
+val_dataset = dataset.get_subset("id_val", transform=transforms.Resize((64, 64)))
+test_dataset = dataset.get_subset("test", transform=transforms.Resize((64, 64)))
+
+num_train_batches = int(len(train_dataset)/batch_size)
+print (len(train_dataset))
+print ("num_train_batches:", num_train_batches)
 
 num_val_batches = int(len(val_dataset)/batch_size)
+print (len(val_dataset))
 print ("num_val_batches:", num_val_batches)
 
 num_test_batches = int(len(test_dataset)/batch_size)
+print (len(test_dataset))
 print ("num_test_batches:", num_test_batches)
 
-train_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
-val_loader = torch.utils.data.DataLoader(dataset=val_dataset, batch_size=batch_size, shuffle=False)
-test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
+train_loader = get_train_loader("standard", train_dataset, batch_size=batch_size)
+val_loader = get_eval_loader("standard", val_dataset, batch_size=batch_size)
+test_loader = get_eval_loader("standard", test_dataset, batch_size=batch_size)
+################################################################################
 
 model_inds = list(range(num_models))
 
@@ -91,10 +103,10 @@ for run_i in range(num_runs):
     abs_error_values = []
     for network in networks:
         network.eval() # (set in eval mode, this affects BatchNorm and dropout)
-    for step, (xs, ys) in enumerate(val_loader):
+    for step, (xs, ys, _) in enumerate(val_loader):
         with torch.no_grad():
-            xs = xs.cuda() # (shape: (batch_size, 3, img_size, img_size))
-            ys = ys.cuda() # (shape: (batch_size))
+            xs = xs.cuda() # (shape: (batch_size, 8, img_size, img_size))
+            ys = ys.cuda().squeeze(1) # (shape: (batch_size))
 
             lows = []
             highs = []
@@ -177,10 +189,10 @@ for run_i in range(num_runs):
     abs_error_values = []
     for network in networks:
         network.eval() # (set in eval mode, this affects BatchNorm and dropout)
-    for step, (xs, ys) in enumerate(test_loader):
+    for step, (xs, ys, _) in enumerate(test_loader):
         with torch.no_grad():
-            xs = xs.cuda() # (shape: (batch_size, 3, img_size, img_size))
-            ys = ys.cuda() # (shape: (batch_size))
+            xs = xs.cuda() # (shape: (batch_size, 8, img_size, img_size))
+            ys = ys.cuda().squeeze(1) # (shape: (batch_size))
 
             lows = []
             highs = []
