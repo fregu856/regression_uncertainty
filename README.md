@@ -28,7 +28,37 @@ TODO!
 ## Datasets:
 
 #### Cells:
-- Test....
+- TODO!
 
 #### Cells-Tails:
-- Test....
+- TODO!
+
+#### Cells-Gap:
+- TODO!
+
+#### ChairAngle:
+- TODO!
+
+#### ChairAngle-Tails:
+- TODO!
+
+#### ChairAngle-Gap:
+- TODO!
+
+#### AssetWealth:
+- TODO!
+
+#### VentricularVolume:
+- TODO!
+
+#### BrainTumourPixels:
+- TODO!
+
+#### SkinLesionPixels:
+- TODO!
+
+#### HistologyNucleiPixels:
+- TODO!
+
+#### AerialBuildingPixels:
+- TODO!
