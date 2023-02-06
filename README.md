@@ -64,7 +64,9 @@ TODO!
 - Run BrainTumourPixels/create_datasets.py to generate the train, val and test splits.
 
 #### SkinLesionPixels:
-- TODO!
+- Download the data from https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T (HAM10000_images_part_1.zip, HAM10000_images_part_2.zip, HAM10000_metadata, HAM10000_segmentations_lesion_tschandl.zip).
+- Create the folder regression_uncertainty/datasets/ham10000.
+- Move the files to regression_uncertainty/datasets/ham10000 and then extract.
 - Run SkinLesionPixels/create_datasets.py to generate the train, val and test splits.
 
 #### HistologyNucleiPixels:
@@ -75,6 +77,6 @@ TODO!
 - Run HistologyNucleiPixels/create_datasets.py to generate the train, val and test splits.
 
 #### AerialBuildingPixels:
-- Download the data from https://project.inria.fr/aerialimagelabeling/ and extract everything.
+- Download the data from https://project.inria.fr/aerialimagelabeling/ and extract.
 - Move the resulting AerialImageDataset folder to regression_uncertainty/datasets.
 - Run AerialBuildingPixels/create_datasets.py to generate the train, val and test splits.
