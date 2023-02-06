@@ -29,9 +29,11 @@ TODO!
 
 #### Cells:
 - TODO!
+- Run Cells/create_datasets.py to generate the train, val and test splits.
 
 #### Cells-Tails:
 - TODO!
+- Run Cells-Tails/create_datasets.py to generate the train, val and test splits.
 
 #### Cells-Gap:
 - TODO!
@@ -46,7 +48,7 @@ TODO!
 - TODO!
 
 #### AssetWealth:
-- TODO!
+- Run AssetWealth/create_datasets.py to download the dataset.
 
 #### VentricularVolume:
 - TODO!
