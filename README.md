@@ -72,9 +72,6 @@ TODO!
 - Run HistologyNucleiPixels/create_datasets.py to generate the train, val and test splits.
 
 #### AerialBuildingPixels:
-- Download the data from https://project.inria.fr/aerialimagelabeling/.
-- $ apt install curl
-- $ apt install p7zip-full
-- $ curl -k https://files.inria.fr/aerialimagelabeling/getAerial.sh | bash
+- Download the data from https://project.inria.fr/aerialimagelabeling/ and extract everything.
 - Move the resulting AerialImageDataset to regression_uncertainty/datasets.
 - Run AerialBuildingPixels/create_datasets.py to generate the train, val and test splits.
