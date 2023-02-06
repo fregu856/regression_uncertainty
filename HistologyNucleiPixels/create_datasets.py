@@ -24,7 +24,7 @@ import cv2
 import scipy.io as sio
 import os
 
-hist_nuclei_data_path = "/root/regression_uncertainty/datasets/SkinLesionPixels/"
+hist_nuclei_data_path = "/root/regression_uncertainty/datasets/HistologyNucleiPixels/"
 
 
 trainval_img_paths = []
