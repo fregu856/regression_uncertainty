@@ -37,30 +37,39 @@ TODO!
 
 #### Cells-Gap:
 - TODO!
+- Run Cells-Gap/create_datasets.py to generate the train, val and test splits.
 
 #### ChairAngle:
 - TODO!
+- Run ChairAngle/create_datasets.py to generate the train, val and test splits.
 
 #### ChairAngle-Tails:
 - TODO!
+- Run ChairAngle-Tails/create_datasets.py to generate the train, val and test splits.
 
 #### ChairAngle-Gap:
 - TODO!
+- Run ChairAngle-Gap/create_datasets.py to generate the train, val and test splits.
 
 #### AssetWealth:
 - Run AssetWealth/create_datasets.py to download the dataset.
 
 #### VentricularVolume:
 - TODO!
+- Run VentricularVolume/create_datasets.py to generate the train, val and test splits.
 
 #### BrainTumourPixels:
 - TODO!
+- Run BrainTumourPixels/create_datasets.py to generate the train, val and test splits.
 
 #### SkinLesionPixels:
 - TODO!
+- Run SkinLesionPixels/create_datasets.py to generate the train, val and test splits.
 
 #### HistologyNucleiPixels:
 - TODO!
+- Run HistologyNucleiPixels/create_datasets.py to generate the train, val and test splits.
 
 #### AerialBuildingPixels:
 - TODO!
+- Run AerialBuildingPixels/create_datasets.py to generate the train, val and test splits.
