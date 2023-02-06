@@ -52,7 +52,8 @@ TODO!
 - Run ChairAngle-Gap/create_datasets.py to generate the train, val and test splits.
 
 #### AssetWealth:
-- Run AssetWealth/create_datasets.py to download the dataset.
+- $ pip install wilds
+- Run AssetWealth/create_datasets.py to download the dataset (13 GB).
 
 #### VentricularVolume:
 - TODO!
