@@ -1,12 +1,5 @@
 # regression_uncertainty
 
-Work in progress, code will be uploaded soon!
-
-
-
-
-***
-
 ![overview image](regression_uncertainty.png)
 
 Official implementation (PyTorch) of the paper: \
@@ -28,39 +21,33 @@ TODO!
 ## Datasets:
 
 #### Cells:
-- TODO!
-- TODO!
-- TODO!
+- Download Cell200.zip from https://github.com/UBCDingXin/improved_CcGAN/tree/adb1f0cd56ff33e2127d1eee5053dac58e292a5c#1-datasets and extract.
+- Move the resulting Cell200 folder to regression_uncertainty/datasets.
 - Run Cells/create_datasets.py to generate the train, val and test splits.
 
 #### Cells-Tails:
-- TODO!
-- TODO!
-- TODO!
+- Download Cell200.zip from https://github.com/UBCDingXin/improved_CcGAN/tree/adb1f0cd56ff33e2127d1eee5053dac58e292a5c#1-datasets and extract.
+- Move the resulting Cell200 folder to regression_uncertainty/datasets.
 - Run Cells-Tails/create_datasets.py to generate the train, val and test splits.
 
 #### Cells-Gap:
-- TODO!
-- TODO!
-- TODO!
+- Download Cell200.zip from https://github.com/UBCDingXin/improved_CcGAN/tree/adb1f0cd56ff33e2127d1eee5053dac58e292a5c#1-datasets and extract.
+- Move the resulting Cell200 folder to regression_uncertainty/datasets.
 - Run Cells-Gap/create_datasets.py to generate the train, val and test splits.
 
 #### ChairAngle:
-- TODO!
-- TODO!
-- TODO!
+- Download RC-49_64x64.h5 from https://github.com/UBCDingXin/improved_CcGAN#datasets.
+- Move RC-49_64x64.h5 to regression_uncertainty/datasets.
 - Run ChairAngle/create_datasets.py to generate the train, val and test splits.
 
 #### ChairAngle-Tails:
-- TODO!
-- TODO!
-- TODO!
+- Download RC-49_64x64.h5 from https://github.com/UBCDingXin/improved_CcGAN#datasets.
+- Move RC-49_64x64.h5 to regression_uncertainty/datasets.
 - Run ChairAngle-Tails/create_datasets.py to generate the train, val and test splits.
 
 #### ChairAngle-Gap:
-- TODO!
-- TODO!
-- TODO!
+- Download RC-49_64x64.h5 from https://github.com/UBCDingXin/improved_CcGAN#datasets.
+- Move RC-49_64x64.h5 to regression_uncertainty/datasets.
 - Run ChairAngle-Gap/create_datasets.py to generate the train, val and test splits.
 
 #### AssetWealth:
