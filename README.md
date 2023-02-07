@@ -5,7 +5,7 @@
 Official implementation (PyTorch) of the paper: \
 **How Reliable is Your Regression Model's Uncertainty Under Real-World Distribution Shifts?**, 2023 [[arXiv (TODO!)]]() [[project (TODO!)]](). \
 [Fredrik K. Gustafsson](http://www.fregu856.com/), [Martin Danelljan](https://martin-danelljan.github.io/), [Thomas B. Schön](http://user.it.uu.se/~thosc112/). \
-_TODO!_
+_We propose a benchmark for testing the reliability of regression uncertainty estimation methods under real-world distribution shifts. It consists of 8 image-based regression datasets with different types of challenging distribution shifts. We use our benchmark to evaluate many of the most common uncertainty estimation methods, as well as two state-of-the-art uncertainty scores from OOD detection. While methods are well calibrated when there is no distribution shift, they all become highly overconfident on many of the benchmark datasets. This uncovers important limitations of current uncertainty estimation methods, and our benchmark thus serves as a challenge to the research community._
 
 If you find this work useful, please consider citing:
 ```
