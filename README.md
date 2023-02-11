@@ -9,7 +9,7 @@ _We propose an extensive benchmark for testing the reliability of regression unc
 
 If you find this work useful, please consider citing:
 ```
-@article{gustafsson2023how,
+@article{gustafsson2023reliable,
   title={How Reliable is Your Regression Model's Uncertainty Under Real-World Distribution Shifts?},
   author={Gustafsson, Fredrik K and Danelljan, Martin and Sch{\"o}n, Thomas B},
   journal={arXiv preprint arXiv:2302.03679},
